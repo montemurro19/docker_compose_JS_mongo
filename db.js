@@ -1,10 +1,10 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
-const dbUri = 'mongodb+srv://:hnjd0RFUYiHhu3wM@cluster0.5xksxxs.mongodb.net/?retryWrites=true&w=majority'
+const connectDb = () => {
+  return mongoose.connect('mongodb://mongo:27017/docker-node-mongo', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+};
 
-mongoose.set('strictQuery', false)
-
-module.exports = () => {
-    return mongoose.connect(dbUri,
-        { useNewUrlParser: true, useUnifiedTopology: true })
-}
+module.exports = connectDb;
