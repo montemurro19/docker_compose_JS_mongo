@@ -6,7 +6,6 @@ const { generateCrudMethods } = require('../services')
 const employeeCrud = generateCrudMethods(Employee)
 const { validateDbId, raiseRecord404Error } = require('../middlewares');
 
-
 router.get('/', (req, res, next) => {
     employeeCrud.getAll()
         .then(data => res.send(data))
@@ -45,6 +44,5 @@ router.delete('/:id', validateDbId, (req, res) => {
         })
         .catch(err => next(err))
 })
-
 
 module.exports = router

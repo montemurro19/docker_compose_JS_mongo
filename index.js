@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 const connectDb = require('./db.js')
 const employeeRoutes = require('./controllers/employee.controller')
 const { errorHandler } = require('./middlewares')
+
 const PORT = process.env.PORT || 3000;
 
 const app = express()
